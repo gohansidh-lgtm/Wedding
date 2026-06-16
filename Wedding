@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay & Khyati | Save The Date</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --dark-gold: #a37f3d;
+            --bg-cream: #faf7f2;
+            --text-dark: #2c2c2c;
+            --text-muted: #6e6e6e;
+            /* CHANGE THE URL BELOW TO YOUR OWN IMAGE FILENAME */
+            --bg-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1920');
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Hero Image Section */
+        .hero {
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(250, 247, 242, 0.3), rgba(250, 247, 242, 0.85)), var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            pointer-events: none;
+        }
+
+        .hashtag {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            color: var(--dark-gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+        }
+
+        .announcement {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+        }
+
+        /* Countdown Grid */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            min-width: 70px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+        }
+
+        .time-box span {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--dark-gold);
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Details Section */
+        .event-details {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px 30px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .date {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .venue {
+            color: var(--dark-gold);
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Our Story Section */
+        .story-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .story-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: var(--dark-gold);
+        }
+
+        .story-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(197,160,89,0.05);
+            border-top: 3px solid var(--primary-gold);
+        }
+
+        .phone-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .story-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; }
+            .hero::before { top: 15px; bottom: 15px; left: 15px; right: 15px; }
+            .countdown { gap: 10px; }
+            .time-box { padding: 15px; min-width: 55px; }
+            .time-box span { font-size: 1.5rem; }
+            .event-details { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Invitation Area with Background Image -->
+    <div class="hero">
+        <div class="hashtag">#JayGotKhyati</div>
+        <h1>Jay & Khyati</h1>
+        <div class="announcement">Are Getting Married</div>
+        
+        <!-- Live Countdown Dynamic Timer -->
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <div class="time-label">Days</div>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <div class="time-label">Hrs</div>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <div class="time-label">Min</div>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <div class="time-label">Sec</div>
+            </div>
+        </div>
+
+        <!-- Event Meta -->
+        <div class="event-details">
+            <div class="date">March 27, 2027</div>
+            <div class="venue">Venue Details Coming Soon</div>
+        </div>
+    </div>
+
+    <!-- How We Met Feature -->
+    <section class="story-section">
+        <h2>How We Met</h2>
+        <div class="story-card">
+            <div class="phone-icon">📞</div>
+            <p class="story-text">
+                "Sometimes, the most beautiful journeys begin with a single ring. For us, a simple phone call sparked a connection that grew into late-night conversations, endless laughter, and a lifetime promise. One call changed our forever."
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        const weddingDate = new Date("March 27, 2027 00:00:00").getTime();
+
+        const updateCountdown = setInterval(function() {
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+
+            if (difference < 0) {
+                clearInterval(updateCountdown);
+                document.querySelector(".countdown").innerHTML = "<div class='hashtag' style='font-size:1.5rem'>The Wedding Day Has Arrived!</div>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
