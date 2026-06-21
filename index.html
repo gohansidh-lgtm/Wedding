@@ -95,6 +95,17 @@
             margin: 45px auto;
         }
 
+        .event-meta {
+            margin-bottom: 40px;
+        }
+
+        .date-string {
+            font-size: 2.2rem;
+            font-weight: 200;
+            letter-spacing: 4px;
+            color: var(--accent-gold);
+        }
+
         /* Countdown Grid */
         .countdown-grid {
             display: grid;
@@ -120,17 +131,6 @@
             color: var(--text-muted);
             margin-top: 12px;
             font-weight: 400;
-        }
-
-        .event-meta {
-            margin-top: 40px;
-        }
-
-        .date-string {
-            font-size: 2rem;
-            font-weight: 200;
-            letter-spacing: 4px;
-            color: var(--accent-gold);
         }
 
         /* Sleek Vector Audio Controls Toggle Layout */
@@ -169,7 +169,7 @@
             body { padding: 40px 16px; }
             h1 { font-size: 3.2rem; }
             .count-box .num { font-size: 2.2rem; }
-            .date-string { font-size: 1.5rem; }
+            .date-string { font-size: 1.8rem; }
             .audio-control { bottom: 20px; right: 20px; }
         }
     </style>
@@ -200,17 +200,17 @@
 
         <div class="line-divider"></div>
 
+        <!-- Date Block (Moved Up) -->
+        <div class="event-meta">
+            <div class="date-string">27 . 03 . 2027</div>
+        </div>
+
+        <!-- Timer Grid (Moved Down) -->
         <div class="countdown-grid">
             <div class="count-box"><span class="num" id="days">00</span><div class="label">Days</div></div>
             <div class="count-box"><span class="num" id="hours">00</span><div class="label">Hours</div></div>
             <div class="count-box"><span class="num" id="mins">00</span><div class="label">Mins</div></div>
             <div class="count-box"><span class="num" id="secs">00</span><div class="label">Secs</div></div>
-        </div>
-
-        <div class="line-divider"></div>
-
-        <div class="event-meta">
-            <div class="date-string">27 . 03 . 2027</div>
         </div>
     </div>
 
