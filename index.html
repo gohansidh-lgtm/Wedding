@@ -185,7 +185,7 @@
         </svg>
     </button>
     
-    <audio id="weddingAudio" loop>
+    <audio id="weddingAudio" loop preload="auto">
         <source src="wedding-song.mp3" type="audio/mpeg">
     </audio>
 
@@ -200,12 +200,12 @@
 
         <div class="line-divider"></div>
 
-        <!-- Date Block (Moved Up) -->
+        <!-- Date Block -->
         <div class="event-meta">
             <div class="date-string">27 . 03 . 2027</div>
         </div>
 
-        <!-- Timer Grid (Moved Down) -->
+        <!-- Timer Grid -->
         <div class="countdown-grid">
             <div class="count-box"><span class="num" id="days">00</span><div class="label">Days</div></div>
             <div class="count-box"><span class="num" id="hours">00</span><div class="label">Hours</div></div>
@@ -238,13 +238,29 @@
         const audio = document.getElementById("weddingAudio");
         const icon = document.getElementById("audioIcon");
 
-        document.body.addEventListener('click', function() {
+        // Global site interaction trigger to bypass browser autoplay blocks immediately
+        function tryAutoplay() {
             if (audio.paused) {
-                audio.play().then(() => updateIcon(true)).catch(e => console.log("Audio handling context updated."));
+                audio.play().then(() => {
+                    updateIcon(true);
+                    cleanUpListeners();
+                }).catch(e => console.log("Waiting for user tap gesture to unlock audio..."));
             }
-        }, { once: true });
+        }
+
+        // Listen for any standard natural interaction on the page
+        document.addEventListener('click', tryAutoplay);
+        document.addEventListener('touchstart', tryAutoplay);
+        document.addEventListener('scroll', tryAutoplay);
+
+        function cleanUpListeners() {
+            document.removeEventListener('click', tryAutoplay);
+            document.removeEventListener('touchstart', tryAutoplay);
+            document.removeEventListener('scroll', tryAutoplay);
+        }
 
         function toggleAudio() {
+            cleanUpListeners(); // stops automatic checks if manually toggled
             if (audio.paused) {
                 audio.play();
                 updateIcon(true);
