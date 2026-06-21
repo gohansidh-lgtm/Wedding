@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay & Khyati • 27.03.27</title>
+    <title>Jay & Khyati • Save The Date</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
             --bg-cream: #faf6f0;
             --text-dark: #121212;
             --text-muted: #7a7a7a;
+            --line-color: #e6dfd5;
             --main-bg-image: url('main-background.png');
             --couple-portrait: url('jay-khyati.png');
         }
@@ -23,193 +24,156 @@
             padding: 0;
         }
 
-        html, body {
-            height: 100%;
+        body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-cream);
             color: var(--text-dark);
             -webkit-font-smoothing: antialiased;
-            /* Activates full screen snap scrolling like harpalsneh */
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            scroll-behavior: smooth;
-        }
-
-        /* Full Screen Slides */
-        section {
-            height: 100vh;
-            width: 100%;
+            padding: 60px 20px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 24px;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-            position: relative;
-            background-color: var(--bg-cream);
+            min-height: 100vh;
         }
 
-        /* Slide 1: Premium Title Cover */
-        .slide-cover {
-            background-image: linear-gradient(to bottom, rgba(250, 246, 240, 0.1), rgba(250, 246, 240, 0.8)), var(--main-bg-image);
-            background-size: cover;
-            background-position: center;
+        /* Main Container matching the premium centered card look */
+        .wrapper {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .hashtag {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 6px;
             text-transform: uppercase;
             font-weight: 500;
-            margin-bottom: auto;
-            padding-top: 40px;
+            color: var(--text-dark);
+            margin-bottom: 40px;
         }
 
-        .main-title-container {
-            margin-auto: vertical;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* Large Clean Names Layout */
+        .names-container {
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-size: 5rem;
+            font-size: 4.5rem;
             font-weight: 200;
             letter-spacing: -2px;
-            line-height: 1.1;
+            line-height: 1;
+            text-transform: none;
         }
 
         .ampersand {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 200;
             color: var(--text-muted);
-            margin: 15px 0;
+            margin: 12px 0;
         }
 
-        .sub-announcement {
-            font-size: 1rem;
+        .announcement {
+            font-size: 0.9rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-top: 30px;
+            margin-top: 25px;
             font-weight: 400;
         }
 
-        .scroll-indicator {
-            margin-top: auto;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            padding-bottom: 20px;
-            animation: pulse 2s infinite;
+        /* Elegant Thin Divider Lines */
+        .line-divider {
+            width: 1px;
+            height: 50px;
+            background-color: var(--line-color);
+            margin: 40px auto;
         }
 
-        /* Slide 2: The Giant Countdown Clock */
-        .slide-countdown {
-            background-color: #111111;
-            color: #ffffff;
-        }
-
-        .slide-countdown .hashtag {
-            color: #ffffff;
-            opacity: 0.6;
-        }
-
+        /* Massive Clean Countdown Grid */
         .countdown-grid {
-            display: flex;
-            gap: 40px;
-            margin: auto 0;
-        }
-
-        .count-box {
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 40px 0;
+            width: 100%;
         }
 
         .count-box .num {
             display: block;
-            font-size: 6rem;
+            font-size: 3rem;
             font-weight: 200;
-            letter-spacing: -3px;
+            letter-spacing: -1px;
             line-height: 1;
-            color: #ffffff;
         }
 
         .count-box .label {
-            font-size: 0.7rem;
-            letter-spacing: 3px;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #888888;
-            margin-top: 15px;
-            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-weight: 400;
         }
 
-        /* Slide 3: Meta Info & Portrait */
-        .slide-details {
-            background-color: var(--bg-cream);
-        }
-
-        .portrait-container {
-            width: 280px;
-            height: 380px;
-            background-image: var(--couple-portrait);
+        /* Featured Portrait Box Container */
+        .portrait-wrapper {
+            width: 100%;
+            height: 450px;
+            background-image: var(--main-bg-image); /* Uses your main background asset */
             background-size: cover;
             background-position: center;
+            margin: 50px 0;
+            background-color: #eae3d8; /* Fallback placeholder color */
             border-radius: 2px;
-            margin-bottom: 40px;
-            background-color: #eaddd3;
         }
 
-        .date-display {
-            font-size: 2.2rem;
+        /* Event Details Layout */
+        .event-meta {
+            margin-top: 40px;
+        }
+
+        .date-string {
+            font-size: 1.8rem;
             font-weight: 300;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .venue-display {
-            font-size: 0.85rem;
+        .venue-string {
+            font-size: 0.8rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--text-muted);
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-
-        /* Fluid Mobile Optimization */
-        @media (max-width: 768px) {
-            h1 { font-size: 3.8rem; }
-            .countdown-grid { gap: 20px; }
-            .count-box .num { font-size: 3.5rem; }
-            .portrait-container { width: 220px; height: 300px; }
-            .date-display { font-size: 1.8rem; }
+        /* Mobile Scale Overrides */
+        @media (max-width: 480px) {
+            body { padding: 40px 16px; }
+            h1 { font-size: 3.5rem; }
+            .count-box .num { font-size: 2.2rem; }
+            .portrait-wrapper { height: 350px; margin: 40px 0; }
+            .date-string { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- SCREEN 1: Hero Editorial Cover -->
-    <section class="slide-cover">
+    <div class="wrapper">
+        <!-- Top Custom Tag -->
         <div class="hashtag">#JayGotKhyati</div>
         
-        <div class="main-title-container">
+        <!-- Center Names Stack -->
+        <div class="names-container">
             <h1>Jay</h1>
             <div class="ampersand">and</div>
             <h1>Khyati</h1>
-            <div class="sub-announcement">Are Getting Married</div>
+            <div class="announcement">Are Getting Married</div>
         </div>
 
-        <div class="scroll-indicator">Scroll Down</div>
-    </section>
+        <div class="line-divider"></div>
 
-    <!-- SCREEN 2: Immersive Black Countdown Screen -->
-    <section class="slide-countdown">
-        <div class="hashtag">The Countdown</div>
-        
+        <!-- System Clock Component -->
         <div class="countdown-grid">
             <div class="count-box"><span class="num" id="days">00</span><div class="label">Days</div></div>
             <div class="count-box"><span class="num" id="hours">00</span><div class="label">Hours</div></div>
@@ -217,35 +181,39 @@
             <div class="count-box"><span class="num" id="secs">00</span><div class="label">Secs</div></div>
         </div>
 
-        <div class="scroll-indicator">Next</div>
-    </section>
+        <!-- Clean Graphic Section Placeholder -->
+        <div class="portrait-wrapper"></div>
 
-    <!-- SCREEN 3: Event Details & Main Image Display -->
-    <section class="slide-details">
-        <div class="portrait-container"></div>
-        
-        <div class="date-display">27 . 03 . 2027</div>
-        <div class="venue-display">Venue Coming Soon</div>
-    </section>
+        <div class="line-divider"></div>
 
-    <!-- Interactive Countdown Engine -->
+        <!-- Date / Venue Block -->
+        <div class="event-meta">
+            <div class="date-string">27 . 03 . 2027</div>
+            <div class="venue-string">Venue Coming Soon</div>
+        </div>
+    </div>
+
+    <!-- Clock Synchronization Loop -->
     <script>
-        const targetTimeline = new Date("March 27, 2027 00:00:00").getTime();
+        const weddingTimestamp = new Date("March 27, 2027 00:00:00").getTime();
         
-        setInterval(function() {
-            const rightNow = new Date().getTime();
-            const timeRemaining = targetTimeline - rightNow;
+        function refreshClock() {
+            const now = new Date().getTime();
+            const gap = weddingTimestamp - now;
 
-            const d = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const h = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((gap % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-            document.getElementById("mins").innerText = m < 10 ? "0" + m : m;
-            document.getElementById("secs").innerText = s < 10 ? "0" + s : s;
-        }, 1000);
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("mins").innerText = mins < 10 ? "0" + mins : mins;
+            document.getElementById("secs").innerText = secs < 10 ? "0" + secs : secs;
+        }
+        
+        setInterval(refreshClock, 1000);
+        refreshClock(); // immediate execution on mount
     </script>
 </body>
 </html>
