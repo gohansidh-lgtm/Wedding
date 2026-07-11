@@ -72,19 +72,19 @@
         }
 
         .ampersand {
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: var(--text-muted);
-            margin: 15px 0;
+            font-size: 3.5rem;
+            font-weight: 200;
+            color: var(--accent-gold);
+            margin: 5px 0;
             letter-spacing: 2px;
         }
 
         .announcement {
-            font-size: 0.8rem;
-            letter-spacing: 5px;
+            font-size: 0.85rem;
+            letter-spacing: 6px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-top: 30px;
+            margin-top: 35px;
             font-weight: 400;
         }
 
@@ -168,6 +168,7 @@
         @media (max-width: 480px) {
             body { padding: 40px 16px; }
             h1 { font-size: 3.2rem; }
+            .ampersand { font-size: 2.5rem; }
             .count-box .num { font-size: 2.2rem; }
             .date-string { font-size: 1.8rem; }
             .audio-control { bottom: 20px; right: 20px; }
@@ -191,11 +192,12 @@
 
     <div class="wrapper">
         
+        <!-- Edited section for sleek typography -->
         <div class="names-container">
             <h1>Jay</h1>
-            <div class="ampersand">and</div>
+            <div class="ampersand">&amp;</div>
             <h1>Khyati</h1>
-            <div class="announcement">Are Getting Married</div>
+            <div class="announcement">are getting married</div>
         </div>
 
         <div class="line-divider"></div>
@@ -238,7 +240,6 @@
         const audio = document.getElementById("weddingAudio");
         const icon = document.getElementById("audioIcon");
 
-        // Global site interaction trigger to bypass browser autoplay blocks immediately
         function tryAutoplay() {
             if (audio.paused) {
                 audio.play().then(() => {
@@ -248,7 +249,6 @@
             }
         }
 
-        // Listen for any standard natural interaction on the page
         document.addEventListener('click', tryAutoplay);
         document.addEventListener('touchstart', tryAutoplay);
         document.addEventListener('scroll', tryAutoplay);
@@ -260,7 +260,7 @@
         }
 
         function toggleAudio() {
-            cleanUpListeners(); // stops automatic checks if manually toggled
+            cleanUpListeners(); 
             if (audio.paused) {
                 audio.play();
                 updateIcon(true);
