@@ -37,7 +37,7 @@
             min-height: 100vh;
         }
 
-        /* PHOTO SHIFTED TO THE RIGHT */
+        /* PHOTO SHIFTED TO THE LEFT */
         .background-overlay {
             position: fixed;
             top: 0;
@@ -46,8 +46,8 @@
             height: 100%;
             background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.40), rgba(18, 18, 18, 0.65)), var(--main-bg-image);
             background-size: cover;
-            /* 80% horizontal positioning pushes the focus to the right */
-            background-position: 80% top; 
+            /* 20% horizontal positioning focuses on the left side of the photo */
+            background-position: 20% top; 
             background-repeat: no-repeat;
             z-index: 1;
         }
@@ -183,8 +183,8 @@
             .audio-link { bottom: 20px; right: 20px; }
             
             .background-overlay {
-                /* Keeps photo aligned to the right on mobile screens */
-                background-position: 85% top; 
+                /* Keeps photo aligned to the left on mobile screens */
+                background-position: 15% top; 
             }
 
             .announcement {
