@@ -37,7 +37,7 @@
             min-height: 100vh;
         }
 
-        /* PHOTO CENTERED HORIZONTALLY */
+        /* ZOOMED OUT & SHIFTED SLIGHTLY LEFT */
         .background-overlay {
             position: fixed;
             top: 0;
@@ -45,9 +45,13 @@
             width: 100%;
             height: 100%;
             background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.40), rgba(18, 18, 18, 0.65)), var(--main-bg-image);
-            background-size: cover;
-            /* Exactly midway between left (20%) and right (80%) */
-            background-position: 50% top; 
+            
+            /* 'contain' fits the entire photo without cropping, or use percentage e.g., 110% auto for a slight zoom out */
+            background-size: cover; 
+            
+            /* 35% sits between center (50%) and left (20%) */
+            background-position: 35% top; 
+            
             background-repeat: no-repeat;
             z-index: 1;
         }
@@ -183,7 +187,9 @@
             .audio-link { bottom: 20px; right: 20px; }
             
             .background-overlay {
-                background-position: 50% top; 
+                /* Zooms out slightly on mobile screens while holding the left-center positioning */
+                background-size: 140% auto;
+                background-position: 30% top; 
             }
 
             .announcement {
