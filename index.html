@@ -60,8 +60,9 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* PUSHED NAMES HIGHER: Negative top margin moves Khyati & Jay up */
         .names-container {
-            margin-top: 20px;
+            margin-top: -20px;
             margin-bottom: 40px;
         }
 
@@ -81,13 +82,13 @@
             letter-spacing: 2px;
         }
 
-        /* SHIFTED DOWN: Increased margin-top from 35px to 70px */
+        /* PUSHED ANNOUNCEMENT LOWER: Increased top margin to 100px */
         .announcement {
             font-size: 0.85rem;
             letter-spacing: 6px;
             text-transform: uppercase;
             color: #e0e0e0;
-            margin-top: 70px; 
+            margin-top: 100px; 
             font-weight: 400;
         }
 
@@ -175,15 +176,15 @@
 
         @media (max-width: 480px) {
             body { padding: 40px 16px; }
+            .names-container { margin-top: -30px; }
             h1 { font-size: 3.2rem; }
             .ampersand { font-size: 2.5rem; }
             .count-box .num { font-size: 2.2rem; }
             .date-string { font-size: 1.8rem; }
             .audio-link { bottom: 20px; right: 20px; }
             
-            /* Keeps faces clear on smaller phone screens */
             .announcement {
-                margin-top: 60px;
+                margin-top: 80px;
             }
         }
     </style>
