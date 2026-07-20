@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khyati & Jay • 27.03.2027</title>
-    
-    <!-- Google Fonts Imports (Inter + Caveat Handwriting Font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -18,8 +16,7 @@
             --accent-gold: #cfb18c;
             --line-color: #333333;
             --main-bg-image: url('main-background-3.jpg');
-            --font-sans: 'Inter', sans-serif;
-            --font-handwriting: 'Caveat', cursive; /* Matching your handwritten style */
+            --font-style: 'Inter', sans-serif;
         }
 
         * {
@@ -29,7 +26,7 @@
         }
 
         body {
-            font-family: var(--font-sans);
+            font-family: var(--font-style);
             background-color: var(--bg-dark);
             color: var(--text-light);
             -webkit-font-smoothing: antialiased;
@@ -63,38 +60,35 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* POSITIONING: Keeps the names section nicely placed */
+        /* PUSHES "THE WEDDING OF KHYATI & JAY" HIGHER (-70px) */
         .names-container {
-            transform: translateY(-40px);
-            margin-bottom: -10px;
+            transform: translateY(-70px);
+            margin-bottom: -40px; /* Adjusted margin to keep date block stationary */
         }
 
         .top-tagline {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             letter-spacing: 6px;
             text-transform: uppercase;
             color: var(--accent-gold);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             font-weight: 300;
         }
 
-        /* HANDWRITTEN STYLE FOR NAMES */
         h1 {
-            font-family: var(--font-handwriting);
-            font-size: 5.5rem; /* Larger font size so handwritten text stands out */
-            font-weight: 500;
-            letter-spacing: 2px;
-            line-height: 1;
-            color: var(--text-light);
+            font-size: 4.5rem;
+            font-weight: 200;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            line-height: 1.2;
         }
 
         .ampersand {
-            font-family: var(--font-handwriting);
-            font-size: 4rem;
-            font-weight: 400;
+            font-size: 3.5rem;
+            font-weight: 200;
             color: var(--accent-gold);
-            margin: -5px 0;
-            line-height: 1;
+            margin: 5px 0;
+            letter-spacing: 2px;
         }
 
         .line-divider {
@@ -181,10 +175,10 @@
 
         @media (max-width: 480px) {
             body { padding: 15px 16px 30px 16px; }
-            .names-container { transform: translateY(-25px); }
-            .top-tagline { font-size: 0.95rem; margin-bottom: 10px; }
-            h1 { font-size: 4rem; }
-            .ampersand { font-size: 3rem; }
+            .names-container { transform: translateY(-45px); margin-bottom: -20px; }
+            .top-tagline { font-size: 1rem; margin-bottom: 20px; }
+            h1 { font-size: 3.2rem; }
+            .ampersand { font-size: 2.5rem; }
             .count-box .num { font-size: 2.2rem; }
             .date-string { font-size: 1.8rem; }
             .audio-link { bottom: 20px; right: 20px; }
