@@ -15,6 +15,7 @@
             --text-muted: #a0a0a0;
             --accent-gold: #cfb18c;
             --line-color: #333333;
+            --main-bg-image: url('main-background-2.jpg');
             --font-style: 'Inter', sans-serif;
         }
 
@@ -29,73 +30,72 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             -webkit-font-smoothing: antialiased;
-            padding: 40px 20px;
+            padding: 60px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.40), rgba(18, 18, 18, 0.65)), var(--main-bg-image);
+            background-size: cover;
+            background-position: center top; 
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
         .wrapper {
             position: relative;
             z-index: 2;
-            max-width: 480px;
+            max-width: 500px;
             width: 100%;
             margin: 0 auto;
             text-align: center;
-        }
-
-        /* PHOTO CONTAINER FIXED */
-        .photo-card {
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto 30px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(207, 177, 140, 0.3);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: auto;
-            display: block;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .names-container {
+            margin-top: 20px;
             margin-bottom: 40px;
         }
 
         h1 {
-            font-size: 3.8rem;
+            font-size: 4.5rem;
             font-weight: 200;
             letter-spacing: 4px;
             text-transform: uppercase;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .ampersand {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 200;
             color: var(--accent-gold);
             margin: 5px 0;
             letter-spacing: 2px;
         }
 
+        /* SHIFTED DOWN: Increased margin-top from 35px to 70px */
         .announcement {
             font-size: 0.85rem;
             letter-spacing: 6px;
             text-transform: uppercase;
             color: #e0e0e0;
-            margin-top: 25px;
+            margin-top: 70px; 
             font-weight: 400;
         }
 
         .line-divider {
             width: 1px;
-            height: 50px;
+            height: 60px;
             background-color: rgba(255, 255, 255, 0.2);
-            margin: 35px auto;
+            margin: 45px auto;
         }
 
         .event-meta {
@@ -103,14 +103,14 @@
         }
 
         .date-string {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 200;
             letter-spacing: 4px;
             color: var(--accent-gold);
         }
 
         .location {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 300;
             letter-spacing: 5px;
             text-transform: uppercase;
@@ -123,13 +123,13 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            margin: 30px 0;
+            margin: 40px 0;
             width: 100%;
         }
 
         .count-box .num {
             display: block;
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 200;
             letter-spacing: -1px;
             line-height: 1;
@@ -141,11 +141,11 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #e0e0e0;
-            margin-top: 10px;
+            margin-top: 12px;
             font-weight: 400;
         }
 
-        /* Audio Control Link */
+        /* Audio Link */
         .audio-link {
             position: fixed;
             bottom: 25px;
@@ -174,19 +174,25 @@
         }
 
         @media (max-width: 480px) {
-            body { padding: 30px 16px; }
-            h1 { font-size: 3rem; }
-            .ampersand { font-size: 2.2rem; }
+            body { padding: 40px 16px; }
+            h1 { font-size: 3.2rem; }
+            .ampersand { font-size: 2.5rem; }
             .count-box .num { font-size: 2.2rem; }
-            .date-string { font-size: 1.6rem; }
+            .date-string { font-size: 1.8rem; }
             .audio-link { bottom: 20px; right: 20px; }
-            .photo-card { max-width: 280px; }
+            
+            /* Keeps faces clear on smaller phone screens */
+            .announcement {
+                margin-top: 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Audio Link -->
+    <div class="background-overlay"></div>
+
+    <!-- Audio Control Line -->
     <div class="audio-link" id="audioToggle" onclick="toggleAudio()" aria-label="Toggle Audio">
         <svg id="audioIcon" viewBox="0 0 24 24">
             <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
@@ -200,11 +206,6 @@
 
     <div class="wrapper">
         
-        <!-- PHOTO CARD PLACEMENT -->
-        <div class="photo-card">
-            <img src="main-background-2.jpg" alt="Khyati & Jay">
-        </div>
-
         <div class="names-container">
             <h1>Khyati</h1>
             <div class="ampersand">&amp;</div>
